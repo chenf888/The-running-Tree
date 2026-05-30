@@ -1,5 +1,5 @@
 // ************ Themes ************
-var themes = ["default", "aqua"]
+var themes = ["默认", "水蓝"]
 
 var colors = {
 	default: {
@@ -33,13 +33,13 @@ function changeTheme() {
 	document.body.style.setProperty("--locked", colors_theme["locked"]);
 }
 function getThemeName() {
-	return options.theme? options.theme : "default";
+	return options.theme === "aqua" ? "水蓝" : "默认";
 }
 
 function switchTheme() {
 	let index = themes.indexOf(options.theme)
 	if (options.theme === null || index >= themes.length-1 || index < 0) {
-		options.theme = themes[0];
+		options.theme = "default";
 	}
 	else {
 		index ++;

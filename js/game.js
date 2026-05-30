@@ -230,7 +230,7 @@ function doReset(layer, force=false) {
 }
 
 function resetRow(row) {
-	if (prompt('Are you sure you want to reset this row? It is highly recommended that you wait until the end of your current run before doing this! Type "I WANT TO RESET THIS" to confirm')!="I WANT TO RESET THIS") return
+	if (prompt('确定要重置这一行吗? 强烈建议在当前跑步结束后再执行! 输入"我要重置"确认')!="我要重置") return
 	let pre_layers = ROW_LAYERS[row-1]
 	let layers = ROW_LAYERS[row]
 	let post_layers = ROW_LAYERS[row+1]
@@ -390,7 +390,7 @@ function gameLoop(diff) {
 }
 
 function hardReset(resetOptions) {
-	if (!confirm("Are you sure you want to do this? You will lose all your progress!")) return
+	if (!confirm("确定要这样做吗? 你将丢失所有进度!")) return
 	player = null
 	if(resetOptions) options = null
 	save(true);

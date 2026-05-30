@@ -43,18 +43,18 @@
 		<canvas id="treeCanvas" class="canvas" v-if="!(tmp.gameEnded && !player.keepGoing)"></canvas>
 
 		<div v-if="false" id="loadingSection" class="fullWidth">
-			<h1>Loading... (If this takes too long it means there was a serious error!)←</h1>
+			<h1>加载中... (如果卡住说明出现了严重错误!)</h1>
 		</div>
 		<div class="vl" v-if="player.navTab !== 'none' && tmp.other.splitScreen && player.tab!='none' && !(tmp.gameEnded && !player.keepGoing)"></div>
 		<div v-if="(tmp.gameEnded && !player.keepGoing)" class="fullWidth">
 			<br>
 			<h2>{{modInfo.name}} {{VERSION.withoutName}}</h2><br><br>
 			<h3 v-html="modInfo.winText"></h3><br>
-			<h3>Please check the Discord to see if there are new content updates!</h3><br><br>
-			<div v-if="!player.timePlayedReset">It took you {{formatTime(player.timePlayed)}} to beat the game.</div>
+			<h3>请关注 Discord 获取最新更新内容!</h3><br><br>
+			<div v-if="!player.timePlayedReset">你用了 {{formatTime(player.timePlayed)}} 通关了游戏。</div>
 			<br>
-			<button class="longUpg can" onclick="hardReset(true)">Play Again</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
-				class="longUpg can" onclick="keepGoing()">Keep Going</button>
+			<button class="longUpg can" onclick="hardReset(true)">重新开始</button>&nbsp;&nbsp;&nbsp;&nbsp;<button
+				class="longUpg can" onclick="keepGoing()">继续游戏</button>
 			<br><br><br>
 			<span v-if="modInfo.discordLink"><a class="link" v-bind:href="modInfo.discordLink"
 					target="_blank">{{modInfo.discordName}}</a><br></span>
@@ -88,7 +88,7 @@
 							v-bind:style="modInfo.discordLink ? {'font-size': '16px'} : {}">The Modding Tree
 							Discord</a><br></li>
 					<li><a class="link" href="http://discord.gg/wwQfgPa" target="_blank"
-							v-bind:style="{'font-size': '16px'}">Main Prestige Tree server</a></li>
+							v-bind:style="{'font-size': '16px'}">Main Prestige Tree 社区</a></li>
 				</ul>
 			</div>
 			<overlay-head v-if="!(tmp.gameEnded && !player.keepGoing)"></overlay-head>
